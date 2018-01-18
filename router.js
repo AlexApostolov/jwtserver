@@ -8,7 +8,7 @@ const requireSignin = passport.authenticate('local', { session: false });
 
 module.exports = function(app) {
   app.get('/', requireAuth, function(req, res) {
-    res.send({ hi: 'there' });
+    res.send({ message: 'Super secret code is ABC123' });
   });
   // Sign in is passed middleware to authenticate user before sending off to controller
   app.post('/signin', requireSignin, Authentication.signin);
